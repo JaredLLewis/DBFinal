@@ -1,6 +1,6 @@
-import sqlite3
+import pymysql
 
-with sqlite3.connect("sample.db") as connection:
+with pymysql.connect("sample.db") as connection:
     c = connection.cursor()
     c.execute("""DROP TABLE posts""")
     c.execute("""CREATE TABLE posts(title TEXT, description TEXT)""")
