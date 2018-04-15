@@ -10,9 +10,9 @@
 
 <h2>Navigation</h2>
 
-    <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;"type="button" class="btn btn-default" ><a
-                            href="{{ url_for('about') }}">About The Project</a></button>
-        <br />
+    <form action="{{ url_for('about') }}">
+    <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;" class="btn btn-default">About the Project</button>
+    </form>
 
     <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;"type="button" class="btn btn-default">Conceptual Database Model</button>
         <br />
@@ -20,7 +20,10 @@
         <br />
      <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;"type="button" class="btn btn-default">Perform Queries</button>
         <br />
+
+    <p style="margin-top:40px; margin-left:10px;"><a target="_blank" href="https://github.com/mortalspirit/DBFinal">View the code here</a></p>
     </div>
+
 
 
 
