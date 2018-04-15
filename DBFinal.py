@@ -1,4 +1,4 @@
-from flask import Flask, g, render_template
+from flask import Flask, g, render_template, url_for
 
 from os import path
 import os
@@ -13,6 +13,7 @@ app.database = "C:\\Users\\leeja\\PycharmProjects\\DBFinal\\sample.db"
 
 @app.route('/')
 def index():
+
     g.db = sqlite3.connect(rel)
     cur = g.db.execute('select * from posts')
     posts = [dict(title=row[0], description=row[1]) for row in cur.fetchall()]
@@ -22,6 +23,9 @@ def index():
 
 
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
 def connect_db():
 
     return sqlite3.connect(app.database)

@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='static/style.css') }}">
     <title>Database Assignment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
+
+
+  <style>
+      h1 {
+
+    color:gray;
+    text-align:center;
+}
+h2 {
+    text-align:center;
+}
+
+body{
+  background: #fff;
+}
+.box {
+
+  transition: box-shadow .3s;
+  width:800px;
+    margin:0 auto;
+  height: 450px;
+  border-radius:10px;
+  border: 1px solid #ccc;
+  background: #fff;
+
+
+}
+.box:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0px;
+    height:50px;
+   width: 100%;
+   background-color: gray;
+   color: white;
+   text-align: center;
+}
+
+</style>
   <body>
 
     <div class="container">
-dd
       <!-- child template -->
       {% block content %}{% endblock %}
 
@@ -22,6 +64,10 @@ dd
         {{ message }}
       {% endfor %}
     </div>
+
+  <div class="footer">
+  <p style="margin-top:10px;">Copyright  &copy; Jared Lewis, John Paul Figler</p>
+</div>
 
   </body>
 </html>

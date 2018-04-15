@@ -1,10 +1,28 @@
 {% extends "base.html" %}
+
 {% block content %}
 
-<h1>Welcome to Flask!</h1>
 
-    {% for post in posts %}
-    {{ post.title }}
-    {{ post.description }}
-    {% endfor %}
+    <h1>Welcome Dr. Pu!</h1>
+    <div class="box">
+
+
+
+<h2>Navigation</h2>
+
+    <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;"type="button" class="btn btn-default" ><a
+                            href="{{ url_for('about') }}">About The Project</a></button>
+        <br />
+
+    <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;"type="button" class="btn btn-default">Conceptual Database Model</button>
+        <br />
+      <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;"type="button" class="btn btn-default">Logical Database Model</button>
+        <br />
+     <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;"type="button" class="btn btn-default">Perform Queries</button>
+        <br />
+    </div>
+
+
+
+
 {% endblock %}
