@@ -2,3 +2,4 @@ Flask==0.12.2
 Jinja2==2.10
 Werkzeug==0.14.1
 Flask-User==0.6.19
+gunicorn==19.7.1
