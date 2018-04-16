@@ -1,10 +1,14 @@
 import pymysql
-
-with pymysql.connect("sample.db") as connection:
-    c = connection.cursor()
-    c.execute("""DROP TABLE posts""")
-    c.execute("""CREATE TABLE posts(title TEXT, description TEXT)""")
-    c.execute('INSERT INTO posts VALUES("GOOD", "PLEASE WORK")')
-    c.execute('INSERT INTO posts VALUES("GOODdee", "yesdee")')
+import MySQLdb
 
 
+
+
+conn = pymysql.connect(host="us-cdbr-iron-east-05.cleardb.net", user="b07f9bd28a1df0", password="68ccaea4", port=3306, database="heroku_bafe54ca91a5de3")
+cursor = conn.cursor()
+
+sql = 'select * FROM Student'
+cursor.execute(sql)
+
+datos = cursor.fetchall()
+print(datos)

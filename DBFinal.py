@@ -1,34 +1,30 @@
 from flask import Flask, g, render_template, url_for
-
-from os import path
-import os
 import sqlite3
+import pymysql
 
-print("current %s" % path.curdir)
+conn = pymysql.connect(host="us-cdbr-iron-east-05.cleardb.net", user="b07f9bd28a1df0", password="68ccaea4",
+                       port=3306, database="heroku_bafe54ca91a5de3")
+cursor = conn.cursor()
 
 
 app = Flask(__name__)
-rel = os.path.join(app.root_path, 'sample.db')
-app.database = "C:\\Users\\leeja\\PycharmProjects\\DBFinal\\sample.db"
 
 @app.route('/')
 def index():
 
-    g.db = sqlite3.connect(rel)
-    cur = g.db.execute('select * from posts')
-    posts = [dict(title=row[0], description=row[1]) for row in cur.fetchall()]
-    g.db.close()
-
-    return render_template('index.html', posts=posts)
+    return render_template('index.html')
 
 
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
-def connect_db():
-
-    return sqlite3.connect(app.database)
+    sql = 'select * FROM Student'
+    cur = cursor.execute(sql)
+    students = [dict(StudentMUNumber=row[0], StaffNumber=row[1], StudentFirstName=row[2], StudentLastName=row[3]) for row in cursor.fetchall()]
+    return render_template('about.html', students=students)
+@app.route('/diagram')
+def diagram():
+    return render_template('diagram.html')
 
 if __name__ == '__main__':
     app.run()

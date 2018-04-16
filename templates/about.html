@@ -4,7 +4,15 @@
 
 <h1>Residence Office at Marshall University</h1>
     <div class="box">
-<p>t</p>
+    <p>The Students:</p>
+     {% for student in students %}
+    {{ student.StudentFirstName }}
+         {{ student.StudentLastName }}
+
+         <p></p>
+    {% endfor %}
+
+
 </div>
 
 {% endblock %}
