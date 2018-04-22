@@ -18,8 +18,10 @@
     </form>
       <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;"type="button" class="btn btn-default">Logical Database Model</button>
         <br />
-     <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;"type="button" class="btn btn-default">Perform Queries</button>
+        <form action="{{ url_for('queries') }}">
+    <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;" class="btn btn-default">Perform Queries</button>
         <br />
+        </form>
 
     <p style="margin-top:40px; margin-left:10px;"><a target="_blank" href="https://github.com/mortalspirit/DBFinal">View the code here</a></p>
     </div>

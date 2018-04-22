@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% if querynum == "1" %}
+    <h2>Query 1 Result</h2>
+    <center>
+        <h4><i>Present a report listing the Manager's Name and phone number for each hall of residence.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         {% if object.ResidenceHallName != None %}
+         <p>Name: {{ object.ResidenceHallName }}</p>
+         <p>Manager: {{ object.ResidenceHallManager }}</p>
+         <p>Phone Number: {{ object.ResidenceHallPhone }}</p>
+         {% endif %}
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+
+{% if querynum == "2" %}
+    <h2>Query 2 Result</h2>
+        <center>
+        <h4><i>Present a report listing the names and MU student numbers with details of their
+lease agreements.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         <p>Student MU Number: {{ object.StudentMUNumber }}</p>
+         <p>Student First Name: {{ object.StudentFirstName }}</p>
+         <p>Student Last Name: {{ object.StudentLastName }}</p>
+         <p>Date They Entered: {{ object.LeaseDateEntered }}</p>
+         <p>Date Expected Leave: {{ object.LeaseDuration }}</p>
+         <p>Semester : {{ object.Semester }}</p>
+         {% if object.LeaseDateLeave !=  None %}
+         <p>Date Actual Leave: {{ object.LeaseDateLeave.strftime("%B %d, %Y") }}</p>
+         {% else %}
+         <p>Lease is Active</p>
+         {% endif %}
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+
+{% if querynum == "3" %}
+    <h2>Query 3 Result</h2>
+            <center>
+        <h4><i>Display the details of lease agreements that include the summer semester.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         <p>Date They Entered: {{ object.LeaseDateEntered }}</p>
+         <p>Date Expected Leave: {{ object.LeaseDuration }}</p>
+         <p>Semester : {{ object.Semester }}</p>
+         {% if object.LeaseDateLeave != None %}
+         <p>Date Actual Leave: {{ object.LeaseDateLeave.strftime("%B %d, %Y") }}</p>
+         {% else %}
+         <p>Lease is Active</p>
+         {% endif %}
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+{% if querynum == "4" %}
+    <h2>Query 4 Result</h2>
+                <center>
+        <h4><i>Display the details of the total rent paid by a given student.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         <p><b>Given Student MUNumber: {{ object.StudentMUNumber}}</b></p>
+
+         <p>Their Rent Sum: ${{ object.SUM}}</p>
+
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+{% if querynum == "5" %}
+
+    <h2>Query 5 Result</h2>
+           <center>
+        <h4><i>Present a report on students who have not paid their invoices by a given date.</i></h4>
+     </center>
+    <hr>
+    <center>
+
+     {% for object in object %}
+
+
+         <p>Inspection Number: {{ object.InspectionNumber}}</p>
+         <p>ApartmentNumber: {{ object.ApartmentNumber}}</p>
+
+
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+{% if querynum == "6" %}
+    <h2>Query 6 Result</h2>
+            <center>
+        <h4><i>Display the details of apartment inspections where the property was found to be in an
+unsatisfactory condition.</i></h4>
+     </center>
+    <hr>
+    <center>
+        <p><b>Selected Date: 2019-04-22 21:40:18.351</b> </p>
+     {% for object in object %}
+
+
+         <p>Student First Name: {{ object.StudentFirstName}}</p>
+         <p>Student Last Name: {{ object.StudentLastName}}</p>
+         {% if object.InvoicePaid == 0 %}
+         <p>Not Paid!</p>
+         {% else %}
+         <p>Paid!</p>
+         {% endif %}
+         <p>Payment Due Date: {{ object.InvoicePaymentDue.strftime("%B %d, %Y") }}</p>
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+
+{% if querynum == "7" %}
+    <h2>Query 7 Result</h2>
+           <center>
+        <h4><i>Present a report of the names and MU numbers of students with their room number and
+place number in a particular hall of residence.</i></h4>
+     </center>
+    <hr>
+    <center>
+        <p><b>Selected Apartment Number: 1 </b></p>
+     {% for object in object %}
+
+
+         <p>Student MU Number: {{ object.StudentMUNumber }}</p>
+         <p>Student First Name: {{ object.StudentFirstName}}</p>
+         <p>Student Last Name: {{ object.StudentLastName}}</p>
+         <p>Student Place Number: {{ object.PlaceNumber }}</p>
+         <p>Student Room Number: {{ object.RoomNumber }}</p>
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+{% if querynum == "8" %}
+    <h2>Query 8 Result</h2>
+             <center>
+        <h4><i>Present a report listing the details of all students currently on the waiting list for
+accomodation, that is, who were not placed.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         <p>Student MU Number: {{ object.StudentMUNumber }}</p>
+         <p>Student First Name: {{ object.StudentFirstName}}</p>
+         <p>Student Last Name: {{ object.StudentLastName}}</p>
+         <p>Student Email: {{ object.StudentEmail }}</p>
+         <p>Student Category: {{ object.StudentCategory }}</p>
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+
+
+
+
+
+
+{% endblock %}
