@@ -66,7 +66,7 @@ def query_post():
         object = [dict(StudentFirstName=row[0], StudentLastName=row[1], InvoicePaid=row[2], InvoicePaymentDue=row[3])
                   for row in cursor.fetchall()]
     if querynum == "6":
-        sql = 'SELECT InspectionNumber, ApartmentNumber, StaffNumber InspectionInspectionGood, InspectionDate, InspectionComments FROM studentapartmentinspections WHERE InspectionInspectioNGood ="0"'
+        sql = 'SELECT InspectionNumber, ApartmentNumber, StaffNumber, InspectionInspectionGood, InspectionDate, InspectionComments FROM studentapartmentinspections WHERE InspectionInspectioNGood ="0"'
 
         cur = cursor.execute(sql)
         object = [dict(InspectionNumber=row[0], ApartmentNumber=row[1], StaffNumber=row[2], InspectionInspectionGood=row[3], InspectionDate=row[4], InspectionComments=row[5])

@@ -94,27 +94,6 @@ lease agreements.</i></h4>
      </center>
     <hr>
     <center>
-
-     {% for object in object %}
-
-
-         <p>Inspection Number: {{ object.InspectionNumber}}</p>
-         <p>ApartmentNumber: {{ object.ApartmentNumber}}</p>
-
-
-         </br>
-
-    {% endfor %}
-    </center>
-{% endif %}
-{% if querynum == "6" %}
-    <h2>Query 6 Result</h2>
-            <center>
-        <h4><i>Display the details of apartment inspections where the property was found to be in an
-unsatisfactory condition.</i></h4>
-     </center>
-    <hr>
-    <center>
         <p><b>Selected Date: 2019-04-22 21:40:18.351</b> </p>
      {% for object in object %}
 
@@ -131,6 +110,32 @@ unsatisfactory condition.</i></h4>
 
     {% endfor %}
     </center>
+
+
+{% endif %}
+{% if querynum == "6" %}
+    <h2>Query 6 Result</h2>
+            <center>
+        <h4><i>Display the details of apartment inspections where the property was found to be in an
+unsatisfactory condition.</i></h4>
+     </center>
+    <hr>
+    <center>
+
+     {% for object in object %}
+
+
+         <p>Inspection Number: {{ object.InspectionNumber}}</p>
+         <p>ApartmentNumber: {{ object.ApartmentNumber}}</p>
+         <p>Inspection Date: {{ object.InspectionDate.strftime("%B %d, %Y") }}</p>
+         <p>Inspection Comments: {{ object.InspectionComments }}</p>
+
+
+         </br>
+
+    {% endfor %}
+    </center>
+
 {% endif %}
 
 {% if querynum == "7" %}
