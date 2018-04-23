@@ -27,6 +27,9 @@ def about():
 @app.route('/diagram')
 def diagram():
     return render_template('diagram.html')
+@app.route('/logicaldiagram')
+def logicaldiagram():
+    return render_template('logicaldiagram.html')
 
 @app.route('/queries')
 def queries():
@@ -85,12 +88,46 @@ def query_post():
                        StudentCategory=row[4])
                   for row in cursor.fetchall()]
     if querynum == "9":
-        sql = 'SELECT StudentMUNumber, StudentFirstName, StudentLastName, StudentEmail, StudentCategory FROM student WHERE StudentStatus = "0"'
+        sql = 'SELECT StudentCategory, COUNT(*) AS TotalStudents FROM Student GROUP BY StudentCategory'
+
 
         cur = cursor.execute(sql)
-        object = [dict(StudentMUNumber=row[0], StudentFirstName=row[1], StudentLastName=row[2], StudentEmail=row[3],
-                       StudentCategory=row[4])
+        object = [dict(StudentCategory=row[0], count=row[1])
                   for row in cursor.fetchall()]
+    if querynum == "10":
+        sql = 'SELECT student.StudentMUNumber, student.StudentFirstName, student.StudentLastName FROM student WHERE student.StudentMUNumber NOT IN (SELECT student.StudentMUNumber FROM student INNER JOIN nextofkin on student.StudentMUNumber=nextofkin.StudentMUNumber)'
+        cur = cursor.execute(sql)
+        object = [dict(StudentMUNumber=row[0], StudentFirstName=row[1], StudentLastName=row[2])
+                  for row in cursor.fetchall()]
+    if querynum == "11":
+        sql = 'SELECT advisor.AdvisorFirstName, advisor.AdvisorLastName,advisor.AdvisorPhoneNumber, student.StudentMUNumber FROM advisor INNER JOIN student on advisor.StaffNumber=student.StaffNumber WHERE student.StudentMUNumber = "1"'
+
+
+        cur = cursor.execute(sql)
+        object = [dict(AdvisorFirstName=row[0], AdvisorLastName=row[1], AdvisorPhoneNumber=row[2], StudentMUNumber=row[3])
+                  for row in cursor.fetchall()]
+    if querynum == "12":
+        sql = 'SELECT MAX(MonthlyRentRate), MIN(MonthlyRentRate), ROUND(AVG(MonthlyRentRate), 2) AS AveragePrice FROM room WHERE room.ApartmentNumber="0"'
+
+        cur = cursor.execute(sql)
+        object = [
+            dict(MAX=row[0], MIN=row[1], AVG=row[2])
+            for row in cursor.fetchall()]
+    if querynum == "13":
+        sql = 'SELECT COUNT(*) AS TotalRooms, residencehall.ResidenceHallName FROM room INNER JOIN residencehall on room.ResidenceHallNumber=residencehall.ResidenceHallNumber WHERE room.ResidenceHallNumber <> "0" GROUP BY room.ResidenceHallNumber '
+
+        cur = cursor.execute(sql)
+        object = [
+            dict(count=row[0], residenceHallName=row[1])
+            for row in cursor.fetchall()]
+
+    if querynum == "14":
+        sql = 'SELECT COUNT(*) AS TotalRooms, residencehall.ResidenceHallName FROM room INNER JOIN residencehall on room.ResidenceHallNumber=residencehall.ResidenceHallNumber WHERE room.ResidenceHallNumber <> "0" GROUP BY room.ResidenceHallNumber '
+
+        cur = cursor.execute(sql)
+        object = [
+            dict(count=row[0], residenceHallName=row[1])
+            for row in cursor.fetchall()]
 
     return render_template('query_post.html', object=object, querynum=querynum)
 

@@ -40,7 +40,7 @@ lease agreements.</i></h4>
          {% if object.LeaseDateLeave !=  None %}
          <p>Date Actual Leave: {{ object.LeaseDateLeave.strftime("%B %d, %Y") }}</p>
          {% else %}
-         <p>Lease is Active</p>
+            <p>Lease is Active</p>
          {% endif %}
          </br>
 
@@ -179,8 +179,98 @@ accomodation, that is, who were not placed.</i></h4>
     {% endfor %}
     </center>
 {% endif %}
+{% if querynum == "9" %}
+    <h2>Query 9 Result</h2>
+             <center>
+        <h4><i>Display the total number of students in each student category.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         <p>{{ object.StudentCategory }}: {{ object.count }}</p>
 
 
+
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+{% if querynum == "10" %}
+    <h2>Query 10 Result</h2>
+             <center>
+        <h4><i>Present a report of the names and MU numbers of all students who have not supplied
+details of their next-of-kin.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         <p>{{ object.StudentMUNumber }}</p>
+         <p>{{ object.StudentFirstName}}</p>
+         <p>{{ object.StudentLastName }}</p>
+
+
+
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+{% if querynum == "11" %}
+    <h2>Query 11 Result</h2>
+             <center>
+        <h4><i>Display the name and internal telephone number of the Advisor for a particular student.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         <p><b>Given Student MUNumber: {{ object.StudentMUNumber}}</b></p>
+         <p>Advisor First Name: {{ object.AdvisorFirstName}}</p>
+         <p>Advisor Last Name: {{ object.AdvisorLastName }}</p>
+         <p>Advisor Phone Number: {{ object.AdvisorPhoneNumber }}</p>
+
+
+
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+{% if querynum == "12" %}
+    <h2>Query 12 Result</h2>
+             <center>
+        <h4><i>Display the minimum, maximum, and average monthly rent for rooms in residence halls.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         <p>Maximum Monthly Rent Rate: {{ object.MAX }}</p>
+         <p>Mininum Monthly Rent Rate: {{ object.MIN }}</p>
+         <p>Average Monthly Rent Rate: {{ object.AVG }}</p>
+
+
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+{% if querynum == "13" %}
+    <h2>Query 13 Result</h2>
+             <center>
+        <h4><i>Display the total number of places in each residence hall.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+        <p>{{ object.residenceHallName }}, Total Rooms: {{ object.count }}</p>
+
+
+
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
 
 
 

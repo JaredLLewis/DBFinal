@@ -3,24 +3,24 @@
 {% block content %}
 
 
-    <h1>Welcome Dr. Pu!</h1>
+    <h1 style="color:black">Greetings Class!</h1>
     <div class="box">
 
 
 
-<h2>Navigation</h2>
+<h2 style="color:gray">Navigation</h2>
 
     <form action="{{ url_for('about') }}">
-    <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;" class="btn btn-default">About the Project</button>
+    <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;" class="btn btn-default">About The Project</button>
     </form>
     <form action="{{ url_for('diagram') }}">
     <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;" class="btn btn-default">Conceptual Database Model</button>
     </form>
-      <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;"type="button" class="btn btn-default">Logical Database Model</button>
-        <br />
+        <form action="{{ url_for('logicaldiagram') }}">
+    <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;" class="btn btn-default">Logical Database Model</button>
+        </form>
         <form action="{{ url_for('queries') }}">
     <button style="left:37%; margin-top:20px; margin-bottom:20px; top:50%; height:40px; width:200px; position:relative;" class="btn btn-default">Perform Queries</button>
-        <br />
         </form>
 
     <p style="margin-top:40px; margin-left:10px;"><a target="_blank" href="https://github.com/mortalspirit/DBFinal">View the code here</a></p>
