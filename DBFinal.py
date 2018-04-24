@@ -7,8 +7,8 @@ conn = None
 if cursor and conn:
     cursor.close()
     conn.close()
-conn = pymysql.connect(host="us-cdbr-iron-east-05.cleardb.net", user="b07f9bd28a1df0", password="68ccaea4",
-                        database="heroku_bafe54ca91a5de3")
+conn = pymysql.connect(host="us-cdbr-iron-east-05.cleardb.net", user="bacde7f8db1310", password="ffe159d1",
+                        database="heroku_29c05403ae453df")
 cursor = conn.cursor()
 
 
