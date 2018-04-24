@@ -2,10 +2,14 @@ from flask import Flask, g, render_template, url_for, request
 import pymysql
 import datetime
 from datetime import datetime
-
+cursor = None
+conn = None
+if cursor and conn:
+    cursor.close()
+    conn.close()
 conn = pymysql.connect(host="us-cdbr-iron-east-05.cleardb.net", user="b07f9bd28a1df0", password="68ccaea4",
                         database="heroku_bafe54ca91a5de3")
-cursor = conn.cursor()
+cursor = conn.cursor(buffered=True)
 
 
 app = Flask(__name__)
@@ -35,6 +39,7 @@ def query_post():
     querynum = request.form.get('querycontroller')
     print(querynum)
     object = None
+
     if querynum == "1":
         sql = 'SELECT ResidenceHallName, ResidenceHallManager, ResidenceHallPhone FROM residencehall'
         cur = cursor.execute(sql)
