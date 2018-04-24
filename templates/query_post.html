@@ -4,8 +4,9 @@
 
 
 {% if querynum == "1" %}
-    <h2>Query 1 Result</h2>
+
     <center>
+    <h2>Query 1 Result</h2>
         <h4><i>Present a report listing the Manager's Name and phone number for each hall of residence.</i></h4>
      </center>
     <hr>
@@ -23,8 +24,9 @@
 {% endif %}
 
 {% if querynum == "2" %}
-    <h2>Query 2 Result</h2>
+
         <center>
+        <h2>Query 2 Result</h2>
         <h4><i>Present a report listing the names and MU student numbers with details of their
 lease agreements.</i></h4>
      </center>
@@ -49,8 +51,9 @@ lease agreements.</i></h4>
 {% endif %}
 
 {% if querynum == "3" %}
-    <h2>Query 3 Result</h2>
+
             <center>
+               <h2>Query 3 Result</h2>
         <h4><i>Display the details of lease agreements that include the summer semester.</i></h4>
      </center>
     <hr>
@@ -70,8 +73,9 @@ lease agreements.</i></h4>
     </center>
 {% endif %}
 {% if querynum == "4" %}
-    <h2>Query 4 Result</h2>
+
                 <center>
+                 <h2>Query 4 Result</h2>
         <h4><i>Display the details of the total rent paid by a given student.</i></h4>
      </center>
     <hr>
@@ -88,8 +92,9 @@ lease agreements.</i></h4>
 {% endif %}
 {% if querynum == "5" %}
 
-    <h2>Query 5 Result</h2>
+
            <center>
+            <h2>Query 5 Result</h2>
         <h4><i>Present a report on students who have not paid their invoices by a given date.</i></h4>
      </center>
     <hr>
@@ -114,8 +119,9 @@ lease agreements.</i></h4>
 
 {% endif %}
 {% if querynum == "6" %}
-    <h2>Query 6 Result</h2>
+
             <center>
+             <h2>Query 6 Result</h2>
         <h4><i>Display the details of apartment inspections where the property was found to be in an
 unsatisfactory condition.</i></h4>
      </center>
@@ -139,8 +145,9 @@ unsatisfactory condition.</i></h4>
 {% endif %}
 
 {% if querynum == "7" %}
-    <h2>Query 7 Result</h2>
+
            <center>
+           <h2>Query 7 Result</h2>
         <h4><i>Present a report of the names and MU numbers of students with their room number and
 place number in a particular hall of residence.</i></h4>
      </center>
@@ -161,8 +168,9 @@ place number in a particular hall of residence.</i></h4>
     </center>
 {% endif %}
 {% if querynum == "8" %}
-    <h2>Query 8 Result</h2>
+
              <center>
+              <h2>Query 8 Result</h2>
         <h4><i>Present a report listing the details of all students currently on the waiting list for
 accomodation, that is, who were not placed.</i></h4>
      </center>
@@ -180,8 +188,9 @@ accomodation, that is, who were not placed.</i></h4>
     </center>
 {% endif %}
 {% if querynum == "9" %}
-    <h2>Query 9 Result</h2>
+
              <center>
+              <h2>Query 9 Result</h2>
         <h4><i>Display the total number of students in each student category.</i></h4>
      </center>
     <hr>
@@ -197,8 +206,9 @@ accomodation, that is, who were not placed.</i></h4>
     </center>
 {% endif %}
 {% if querynum == "10" %}
-    <h2>Query 10 Result</h2>
+
              <center>
+              <h2>Query 10 Result</h2>
         <h4><i>Present a report of the names and MU numbers of all students who have not supplied
 details of their next-of-kin.</i></h4>
      </center>
@@ -217,8 +227,9 @@ details of their next-of-kin.</i></h4>
     </center>
 {% endif %}
 {% if querynum == "11" %}
-    <h2>Query 11 Result</h2>
+
              <center>
+             <h2>Query 11 Result</h2>
         <h4><i>Display the name and internal telephone number of the Advisor for a particular student.</i></h4>
      </center>
     <hr>
@@ -237,8 +248,9 @@ details of their next-of-kin.</i></h4>
     </center>
 {% endif %}
 {% if querynum == "12" %}
-    <h2>Query 12 Result</h2>
+
              <center>
+             <h2>Query 12 Result</h2>
         <h4><i>Display the minimum, maximum, and average monthly rent for rooms in residence halls.</i></h4>
      </center>
     <hr>
@@ -255,8 +267,9 @@ details of their next-of-kin.</i></h4>
     </center>
 {% endif %}
 {% if querynum == "13" %}
-    <h2>Query 13 Result</h2>
+
              <center>
+              <h2>Query 13 Result</h2>
         <h4><i>Display the total number of places in each residence hall.</i></h4>
      </center>
     <hr>
@@ -271,8 +284,48 @@ details of their next-of-kin.</i></h4>
     {% endfor %}
     </center>
 {% endif %}
+{% if querynum == "14" %}
+
+             <center>
+              <h2>Query 14 Result</h2>
+        <h4><i>Display the staff number, name, age, and current location of all members of the
+residence staff who are over 60 years old today.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         <p>Staff Number: {{ object.StaffNumber }}</p>
+        <p>Staff First Name: {{ object.StaffFirstName }}</p>
+        <p>Staff Last Name: {{ object.StaffLastName }}</p>
+         <p>Staff Location: {{ object.StaffLocation }}</p>
+         <p>Staff Age: {{ object.StaffAge }}</p>
 
 
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+{% if querynum == "15" %}
+
+             <center>
+              <h2>Query 15 Result</h2>
+        <h4><i>Display the total number of registered vehicles in the particluar parking lot.</i></h4>
+     </center>
+    <hr>
+    <center>
+     {% for object in object %}
+         <p><b>Given Parking Lot Number: {{ object.ParkingLotNumber}}</b></p>
+        <p>Total Cars: {{ object.count }}</p>
 
 
+         </br>
+
+    {% endfor %}
+    </center>
+{% endif %}
+<center>
+<p><a href="{{ url_for('queries') }}">Perform More Queries!</a></p>
+</center>
+</br></br></br>
 {% endblock %}

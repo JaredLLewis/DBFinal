@@ -122,11 +122,18 @@ def query_post():
             for row in cursor.fetchall()]
 
     if querynum == "14":
-        sql = 'SELECT COUNT(*) AS TotalRooms, residencehall.ResidenceHallName FROM room INNER JOIN residencehall on room.ResidenceHallNumber=residencehall.ResidenceHallNumber WHERE room.ResidenceHallNumber <> "0" GROUP BY room.ResidenceHallNumber '
+        sql = 'SELECT StaffNumber, StaffFirstName,StaffLastName,StaffLocation, YEAR(CURRENT_TIMESTAMP) - YEAR(StaffDateOfBirth) - (RIGHT(CURRENT_TIMESTAMP, 5) < RIGHT(StaffDateOfBirth, 5)) as age  FROM residenceStaff WHERE YEAR(CURRENT_TIMESTAMP) - YEAR(StaffDateOfBirth) - (RIGHT(CURRENT_TIMESTAMP, 5) < RIGHT(StaffDateOfBirth, 5)) > "60"'
 
         cur = cursor.execute(sql)
         object = [
-            dict(count=row[0], residenceHallName=row[1])
+            dict(StaffNumber=row[0], StaffFirstName=row[1], StaffLastName=row[2], StaffLocation=row[3], StaffAge=row[4])
+            for row in cursor.fetchall()]
+    if querynum == "15":
+        sql = 'SELECT COUNT(VehicleNumber) as TotalRegistered, ParkingLotNumber FROM Vehicle WHERE ParkingLotNumber= "1";'
+
+        cur = cursor.execute(sql)
+        object = [
+            dict(count=row[0], ParkingLotNumber=row[1])
             for row in cursor.fetchall()]
 
     return render_template('query_post.html', object=object, querynum=querynum)
