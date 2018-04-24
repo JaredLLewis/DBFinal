@@ -19,10 +19,7 @@ def index():
 
 @app.route('/about')
 def about():
-    sql = 'select * FROM Student'
-    cur = cursor.execute(sql)
-    students = [dict(StudentMUNumber=row[0], StaffNumber=row[1], StudentFirstName=row[2], StudentLastName=row[3]) for row in cursor.fetchall()]
-    return render_template('about.html', students=students)
+    return render_template('about.html')
 @app.route('/diagram')
 def diagram():
     return render_template('diagram.html')
@@ -54,6 +51,7 @@ def query_post():
         object = [dict(LeaseNumber=row[0], StudentMUNumber=row[1], PlaceNumber=row[2], LeaseDuration=row[3].strftime("%B %d, %Y"),
                        LeaseDateEntered=row[4].strftime("%B %d, %Y"), LeaseDateLeave=row[5], Semester=row[6])
                   for row in cursor.fetchall()]
+
 
     if querynum == "4":
         sql = 'SELECT SUM(InvoiceAmount), lease.LeaseNumber, lease.StudentMUNumber FROM invoice INNER JOIN lease ON invoice.LeaseNumber=lease.LeaseNumber WHERE lease.StudentMUNumber = "1"'
@@ -139,6 +137,7 @@ def query_post():
 
 
 if __name__ == '__main__':
+    app.debug = True
     app.run()
 
 
