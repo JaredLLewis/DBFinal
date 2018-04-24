@@ -9,7 +9,7 @@ if cursor and conn:
     conn.close()
 conn = pymysql.connect(host="us-cdbr-iron-east-05.cleardb.net", user="b07f9bd28a1df0", password="68ccaea4",
                         database="heroku_bafe54ca91a5de3")
-cursor = conn.cursor(buffered=True)
+cursor = conn.cursor()
 
 
 app = Flask(__name__)
