@@ -39,7 +39,7 @@ def query_post():
     querynum = request.form.get('querycontroller')
     print(querynum)
     object = None
-
+#
     if querynum == "1":
         try:
             sql = 'SELECT ResidenceHallName, ResidenceHallManager, ResidenceHallPhone FROM residencehall'
