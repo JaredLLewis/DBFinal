@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="074ab97c-be80-4dcc-bbd3-0ef45ff605a1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBFinal.py" beforeDir="false" afterPath="$PROJECT_DIR$/DBFinal.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DBFinal$DBFinal.coverage" NAME="DBFinal Coverage Results" MODIFIED="1524608406971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/DBFinal$DBFinal.coverage" NAME="DBFinal Coverage Results" MODIFIED="1524610857729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/DBFinal$sql.coverage" NAME="sql Coverage Results" MODIFIED="1523842556969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
@@ -21,8 +20,8 @@
       <file leaf-file-name="DBFinal.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DBFinal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="-1923">
+              <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
               </folding>
@@ -431,12 +430,25 @@
       <option name="project" value="LOCAL" />
       <updated>1524606569635</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="attempt to fix db issue">
+      <created>1524608428998</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1524608428998</updated>
+    </task>
+    <task id="LOCAL-00026" summary="wiping postgres...">
+      <created>1524608797679</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1524608797679</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50572914" side_tool="true" visible="true" weight="0.32943678" />
@@ -476,7 +488,8 @@
     <MESSAGE value="13/15 queries" />
     <MESSAGE value="15/15 queries" />
     <MESSAGE value="attempt to fix db issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="attempt to fix db issue" />
+    <MESSAGE value="wiping postgres..." />
+    <option name="LAST_COMMIT_MESSAGE" value="wiping postgres..." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/DBFinal.py">
@@ -806,8 +819,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DBFinal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="-1923">
+          <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>
