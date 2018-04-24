@@ -1,5 +1,4 @@
 from flask import Flask, g, render_template, url_for, request
-import sqlite3
 import pymysql
 import datetime
 from datetime import datetime
