@@ -12,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DBFinal$DBFinal.coverage" NAME="DBFinal Coverage Results" MODIFIED="1524610857729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/DBFinal$DBFinal.coverage" NAME="DBFinal Coverage Results" MODIFIED="1524612438784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/DBFinal$sql.coverage" NAME="sql Coverage Results" MODIFIED="1523842556969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
@@ -20,8 +20,8 @@
       <file leaf-file-name="DBFinal.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DBFinal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1923">
-              <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+            <state relative-caret-position="85">
+              <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
               </folding>
@@ -444,11 +444,33 @@
       <option name="project" value="LOCAL" />
       <updated>1524608797679</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="try again">
+      <created>1524610874849</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1524610874849</updated>
+    </task>
+    <task id="LOCAL-00028" summary="try again">
+      <created>1524612062976</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1524612062976</updated>
+    </task>
+    <task id="LOCAL-00029" summary="try again">
+      <created>1524612078463</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1524612078463</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50572914" side_tool="true" visible="true" weight="0.32943678" />
@@ -489,7 +511,8 @@
     <MESSAGE value="15/15 queries" />
     <MESSAGE value="attempt to fix db issue" />
     <MESSAGE value="wiping postgres..." />
-    <option name="LAST_COMMIT_MESSAGE" value="wiping postgres..." />
+    <MESSAGE value="try again" />
+    <option name="LAST_COMMIT_MESSAGE" value="try again" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/DBFinal.py">
@@ -819,8 +842,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DBFinal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1923">
-          <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+        <state relative-caret-position="85">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>

@@ -46,11 +46,12 @@ def query_post():
             cursor = conn.cursor()
             cursor.execute(sql)
             cursor.close()
+            object = [dict(ResidenceHallName=row[0], ResidenceHallManager=row[1], ResidenceHallPhone=row[2])
+                      for row in cursor.fetchall()]
         except:
             conn.ping(True)
             print("Company Data saved")
-        object = [dict(ResidenceHallName=row[0], ResidenceHallManager=row[1], ResidenceHallPhone=row[2])
-                    for row in cursor.fetchall()]
+
     if querynum == "2":
         sql = 'SELECT student.StudentMUNumber, student.StudentFirstname, student.StudentLastName, lease.LeaseDuration, lease.DateEntered, lease.DateLeave, lease.Semester FROM Student INNER JOIN lease ON student.StudentMUNumber=lease.StudentMUNumber  ;'
         cursor = conn.cursor()
