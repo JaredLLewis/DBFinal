@@ -3,7 +3,6 @@ import pymysql
 import datetime
 from datetime import datetime
 cursor = None
-#e
 conn = None
 if cursor and conn:
     cursor.close()
